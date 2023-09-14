@@ -68,6 +68,36 @@ export default function themePalette(theme: any) {
         background: {
             paper: theme.paper,
             default: theme.backgroundDefault
-        }
+        },
+        vivityBlack: {
+            main: theme.blackVivityMain
+        },
+        vivityPink: {
+            light: theme.pinkVivityLight,
+            dark: theme.pinkVivityDark
+        },
+        vivityRed: {
+            light: theme.backgroundDefault
+        },
+        vivityOrage: {
+            light: theme.orangeVivityLight
+        },
+        vivityYellow: {
+            light: theme.vivityYellowLight,
+        },
+        vivityGreen: {
+            light: theme.greenVivityLight,
+            main: theme.greenVivityMain,
+            dark: theme.greenVivityDark
+        },
+        vivityBlue: {
+            light: theme.blueVivityLight,
+            main: theme.blueVivityMain,
+        },
+        vivityPurple: {
+            light: theme.purpleVivityLight,
+            main: theme.purpleVivityMain,
+            dark: theme.purpleVivityDark
+        },
     };
 }

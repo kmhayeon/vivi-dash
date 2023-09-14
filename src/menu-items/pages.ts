@@ -1,9 +1,9 @@
 // assets
-import { TbCircleKey } from "react-icons/tb";
+import { TbKey } from "react-icons/tb";
 
 // constant
 const icons = {
-  TbCircleKey
+  TbKey
 };
 
 const pages = {
@@ -16,7 +16,7 @@ const pages = {
       id: 'authentication',
       title: 'Authentication',
       type: 'collapse',
-      icon: icons.TbCircleKey,
+      icon: icons.TbKey,
 
       children: [
         {

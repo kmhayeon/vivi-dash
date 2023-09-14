@@ -82,8 +82,6 @@ export default function RootLayout({ children }: { children: React.ReactNode}) {
           {/* main content */}
           {/* <Main theme={theme} open={leftDrawerOpened}> */}
           <Main open={leftDrawerOpened}>
-            {/* <Breadcrumbs separator={IconChevronRight} navigation={navigation} icon title rightAlign /> */}
-            {/* <Outlet /> */}
             {children}
           </Main>
           </Box>

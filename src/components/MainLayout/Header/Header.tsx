@@ -43,7 +43,6 @@ const Header:React.FC<IHederProps> = props => {
             sx={{
               ...themeTypography?.commonAvatar,
               ...themeTypography?.mediumAvatar,
-              ...theme.typography.h6,
               transition: 'all .2s ease-in-out',
               background: theme.palette.secondary.light,
               color: theme.palette.secondary.dark,
