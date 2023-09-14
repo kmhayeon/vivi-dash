@@ -1,30 +1,22 @@
 
 import React,{useState, useEffect, forwardRef} from 'react';
-import PropTypes from 'prop-types';
 import { usePathname } from 'next/navigation'
 
 import Link from 'next/link';
-
-// import { Link, useLocation } from 'react-router-dom';
-// import { useDispatch, useSelector } from 'react-redux';
 
 // material-ui
 import { useTheme } from '@mui/material/styles';
 import { Avatar, Chip, ListItemButton, ListItemIcon, ListItemText, Typography, useMediaQuery } from '@mui/material';
 
-// project imports
-// import { MENU_OPEN, SET_MENU } from 'store/actions';
-
 // assets
 import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
-import { imageOptimizer } from 'next/dist/server/image-optimizer';
+
 
 interface IHederProps  {
   item: any;
   level?: any;
 }
 
-// ==============================|| SIDEBAR MENU LIST ITEMS ||============================== //
 
 const NavItem:React.FC<IHederProps> = ({ item, level }) => {
   const theme = useTheme();

@@ -2,22 +2,14 @@
 import { useTheme } from '@mui/material/styles';
 import { Avatar, Box, ButtonBase } from '@mui/material';
 import { TbMenu2 } from "react-icons/tb";
-import Image from 'next/image'
-import LogoImg from '/public/images/vivityai.png'
-
 
 // project imports
-// import LogoSection from '../LogoSection';
-// import SearchSection from './SearchSection';
-// import ProfileSection from './ProfileSection';
-// import NotificationSection from './NotificationSection';
 import LogoSection from '../../LogoSection/LogoSection';
 import SearchSection from './SearchSection/SearchSection';
 import ProfileSection from './ProfileSection/ProfileSection';
 import NotificationSection from './NotificationSection/NotificationSection';
 
 // assets
-// import { IconMenu2 } from '@tabler/icons';
 import themeTypography from '@/app/themes/typography';
 
 

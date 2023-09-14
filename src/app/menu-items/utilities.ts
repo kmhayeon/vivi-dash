@@ -9,8 +9,6 @@ const icons = {
   TbWindmill
 };
 
-// ==============================|| UTILITIES MENU ITEMS ||============================== //
-
 const utilities = {
   id: 'utilities',
   title: 'Utilities',

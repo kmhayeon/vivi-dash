@@ -14,6 +14,7 @@ export default function ThemeRegistry(props: any) {
   const { options, children } = props;
   const muiTheme = useTheme();
 
+  // This implementation is from emotion-js
   const [{ cache, flush }] = React.useState(() => {
     const cache = createCache(options);
     cache.compat = true;

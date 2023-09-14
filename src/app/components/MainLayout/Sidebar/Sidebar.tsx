@@ -7,15 +7,8 @@ import PerfectScrollbar from 'react-perfect-scrollbar';
 import { BrowserView, MobileView } from 'react-device-detect';
 
 // project imports
-// import MenuList from './MenuList';
-// import LogoSection from '../LogoSection';
-import LogoSection from '../../LogoSection/LogoSection';
 import MenuList from './MenuList/MenuList';
-
-
-import Image from 'next/image';
-import LogoImg from '/public/images/vivityai.png'
-import styled from 'styled-components';
+import LogoSection from '../../LogoSection/LogoSection';
 
 
 interface IHederProps  {

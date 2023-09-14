@@ -3,7 +3,6 @@ import { Typography } from '@mui/material';
 
 // project imports
 import NavGroup from '../NavGroup/NavGroup';
-// import menuItem from 'menu-items';
 import menuItems from '@/app/menu-items/menuItems';
 
 

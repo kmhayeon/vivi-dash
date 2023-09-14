@@ -4,7 +4,6 @@ import { TbBrandChrome, TbHelpCircle } from "react-icons/tb";
 // constant
 const icons = { TbBrandChrome, TbHelpCircle };
 
-// ==============================|| SAMPLE PAGE & DOCUMENTATION MENU ITEMS ||============================== //
 
 const other = {
   id: 'sample-docs-roadmap',

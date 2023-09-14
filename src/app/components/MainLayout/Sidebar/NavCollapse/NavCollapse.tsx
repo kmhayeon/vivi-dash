@@ -1,7 +1,5 @@
 import React, {useState, useEffect} from 'react';
 import PropTypes from 'prop-types';
-// import { useSelector } from 'react-redux';
-// import { useLocation, useNavigate } from 'react-router';
 import { usePathname } from 'next/navigation';
 
 // material-ui
@@ -13,11 +11,10 @@ import NavItem from '../NavItem/NavItem';
 
 // assets
 import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
-// import { IconChevronDown, IconChevronUp } from '@tabler/icons';
 import {TbChevronUp, TbChevronDown} from 'react-icons/tb';
 
 
-interface INavCollapsProps  {
+export interface INavCollapsProps  {
   menu: any;
   level: any;
 }

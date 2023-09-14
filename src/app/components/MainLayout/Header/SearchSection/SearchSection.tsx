@@ -13,8 +13,15 @@ import Transitions from '../ProfileSection/Transitions';
 
 // assets
 import { TbAdjustmentsHorizontal, TbSearch, TbX  } from 'react-icons/tb'
-
 import { shouldForwardProp } from '@mui/system';
+
+
+export interface IMobileSearchProps {
+  value:any;
+  setValue:any;
+  popupState: any;
+}
+
 
 // styles
 const PopperStyle = styled(Popper, { shouldForwardProp })(({ theme }) => ({
@@ -56,15 +63,6 @@ const HeaderAvatarStyle = styled(Avatar, { shouldForwardProp })(({ theme }) => (
     color: theme.palette.secondary.light
   }
 }));
-
-// ==============================|| SEARCH INPUT - MOBILE||============================== //
-
-export interface IMobileSearchProps {
-  value:any;
-  setValue:any;
-  popupState: any;
-}
-
 
 const MobileSearch:React.FC<IMobileSearchProps>= ({ value, setValue, popupState }) => {
   const theme = useTheme();

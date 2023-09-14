@@ -1,12 +1,10 @@
 // assets
-// import { IconDashboard } from '@tabler/icons';
 import { TbDashboard } from "react-icons/tb";
 
 
 // constant
 const icons = { TbDashboard };
 
-// ==============================|| DASHBOARD MENU ITEMS ||============================== //
 
 const dashboard = {
   id: 'dashboard',

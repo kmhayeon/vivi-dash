@@ -1,5 +1,10 @@
+
+//////////////////////////////////////////////////////
+//////////////////////////////////////////////////////
+////////////////// 미구현 페이지
+//////////////////////////////////////////////////////
+//////////////////////////////////////////////////////
 import { useState, useRef, useEffect } from 'react';
-// import { Link } from 'react-router-dom';
 
 // material-ui
 import { useTheme } from '@mui/material/styles';
@@ -58,9 +63,7 @@ const NotificationSection = () => {
 
   const [open, setOpen] = useState(false);
   const [value, setValue] = useState('');
-  /**
-   * anchorRef is used on different componets and specifying one type leads to other components throwing an error
-   * */
+
   const anchorRef = useRef(null);
 
   const handleToggle = () => {
