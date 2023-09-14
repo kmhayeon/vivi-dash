@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import PropTypes from 'prop-types';
 // import { useSelector } from 'react-redux';
 // import { useLocation, useNavigate } from 'react-router';
+import { usePathname } from 'next/navigation';
 
 // material-ui
 import { useTheme } from '@mui/material/styles';
@@ -13,6 +14,7 @@ import NavItem from '../NavItem/NavItem';
 // assets
 import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
 // import { IconChevronDown, IconChevronUp } from '@tabler/icons';
+import {TbChevronUp, TbChevronDown} from 'react-icons/tb';
 
 
 interface INavCollapsProps  {
@@ -25,45 +27,48 @@ const NavCollapse:React.FC<INavCollapsProps> = ({ menu, level }) => {
   // const customization = useSelector((state) => state.customization);
   // const navigate = useNavigate();
 
+  
+
   const [open, setOpen] = useState(false);
   const [selected, setSelected] = useState(null);
 
-  // const handleClick = () => {
-  //   setOpen(!open);
-  //   setSelected(!selected ? menu.id : null);
-  //   if (menu?.id !== 'authentication') {
-  //     navigate(menu.children[0]?.url);
-  //   }
-  // };
+  const handleClick = () => {
+    setOpen(!open);
+    setSelected(!selected ? menu.id : null);
+    if (menu?.id !== 'authentication') {
+      // navigate(menu.children[0]?.url);
+    }
+  };
 
-  // const { pathname } = useLocation();
-  // const checkOpenForParent = (child, id) => {
-  //   child.forEach((item) => {
-  //     if (item.url === pathname) {
-  //       setOpen(true);
-  //       setSelected(id);
-  //     }
-  //   });
-  // };
+  const pathname = usePathname();
+
+  const checkOpenForParent = (child:any, id:any) => {
+    child.forEach((item:any) => {
+      if (item.url === pathname) {
+        setOpen(true);
+        setSelected(id);
+      }
+    });
+  };
 
   // menu collapse for sub-levels
-  // useEffect(() => {
-  //   setOpen(false);
-  //   setSelected(null);
-  //   if (menu.children) {
-  //     menu.children.forEach((item) => {
-  //       if (item.children?.length) {
-  //         checkOpenForParent(item.children, menu.id);
-  //       }
-  //       if (item.url === pathname) {
-  //         setSelected(menu.id);
-  //         setOpen(true);
-  //       }
-  //     });
-  //   }
+  useEffect(() => {
+    setOpen(false);
+    setSelected(null);
+    if (menu.children) {
+      menu.children.forEach((item:any) => {
+        if (item.children?.length) {
+          checkOpenForParent(item.children, menu.id);
+        }
+        if (item.url === pathname) {
+          setSelected(menu.id);
+          setOpen(true);
+        }
+      });
+    }
 
-  //   // eslint-disable-next-line react-hooks/exhaustive-deps
-  // }, [pathname, menu.children]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [pathname, menu.children]);
 
   // menu collapse & item
   const menus = menu.children?.map((item:any) => {
@@ -83,7 +88,7 @@ const NavCollapse:React.FC<INavCollapsProps> = ({ menu, level }) => {
 
   const Icon = menu.icon;
   const menuIcon = menu.icon ? (
-    <Icon strokeWidth={1.5} size="1.3rem" style={{ marginTop: 'auto', marginBottom: 'auto' }} />
+    <Icon size="1.3rem" style={{ marginTop: 'auto', marginBottom: 'auto' }} />
   ) : (
     <FiberManualRecordIcon
       sx={{
@@ -98,7 +103,7 @@ const NavCollapse:React.FC<INavCollapsProps> = ({ menu, level }) => {
     <>
       <ListItemButton
         sx={{
-          // borderRadius: `${customization.borderRadius}px`,
+          borderRadius: `12px`,
           mb: 0.5,
           alignItems: 'flex-start',
           backgroundColor: level > 1 ? 'transparent !important' : 'inherit',
@@ -106,7 +111,7 @@ const NavCollapse:React.FC<INavCollapsProps> = ({ menu, level }) => {
           pl: `${level * 24}px`
         }}
         selected={selected === menu.id}
-        // onClick={handleClick}
+        onClick={handleClick}
       >
         <ListItemIcon sx={{ my: 'auto', minWidth: !menu.icon ? 18 : 36 }}>{menuIcon}</ListItemIcon>
         <ListItemText
@@ -123,11 +128,11 @@ const NavCollapse:React.FC<INavCollapsProps> = ({ menu, level }) => {
             )
           }
         />
-        {/* {open ? (
-          <IconChevronUp stroke={1.5} size="1rem" style={{ marginTop: 'auto', marginBottom: 'auto' }} />
+        {open ? (
+          <TbChevronUp  size="1rem" style={{ marginTop: 'auto', marginBottom: 'auto' }} />
         ) : (
-          <IconChevronDown stroke={1.5} size="1rem" style={{ marginTop: 'auto', marginBottom: 'auto' }} />
-        )} */}
+          <TbChevronDown  size="1rem" style={{ marginTop: 'auto', marginBottom: 'auto' }} />
+        )}
       </ListItemButton>
       <Collapse in={open} timeout="auto" unmountOnExit>
         <List

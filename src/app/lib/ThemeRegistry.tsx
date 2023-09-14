@@ -10,7 +10,6 @@ import CssBaseline from '@mui/material/CssBaseline';
 import customTheme from '../themes/theme';
 
 
-
 export default function ThemeRegistry(props: any) {
   const { options, children } = props;
   const muiTheme = useTheme();

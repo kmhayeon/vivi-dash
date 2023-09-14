@@ -1,5 +1,5 @@
 
-import React,{useState, useEffect} from 'react';
+import React,{useState, useEffect, forwardRef} from 'react';
 import PropTypes from 'prop-types';
 import { usePathname } from 'next/navigation'
 
@@ -38,42 +38,58 @@ const NavItem:React.FC<IHederProps> = ({ item, level }) => {
 
   const Icon = item.icon;
 
+  const itemIcon = item?.icon ? (
+    <Icon size="1.3rem" />
+  ) : (
+    <FiberManualRecordIcon
+      sx={{
+        width: isOpen.findIndex((id) => id === item?.id) > -1 ? 8 : 6,
+        height: isOpen.findIndex((id) => id === item?.id) > -1 ? 8 : 6
+      }}
+      fontSize={level > 0 ? 'inherit' : 'medium'}
+    />
+  );
+
 
   let itemTarget = '_self';
   if (item.target) {
     itemTarget = '_blank';
   }
 
-  // let listItemProps = {
-  //   component: forwardRef((props:any) => <Link {...props} href={item.url} target={itemTarget} />)
-  // };
+  let listItemProps = {
+    component: forwardRef((props:any) => <Link {...props} href={item.url} target={itemTarget} />)
+  };
   // if (item?.external) {
   //   listItemProps = { component: 'a', href: item.url, target: itemTarget };
   // }
 
-  // const itemHandler = (id) => {
-  //   dispatch({ type: MENU_OPEN, id });
-  //   if (matchesSM) dispatch({ type: SET_MENU, opened: false });
-  // };
+  const itemHandler = (id: any) => {
+    console.log(id)
+    // dispatch({ type: MENU_OPEN, id });
+    // if (matchesSM) dispatch({ type: SET_MENU, opened: false });
+    if(matchesSM) {
+
+    }
+  };
 
   // active menu item on page load
-  // useEffect(() => {
-  //   const currentIndex = document.location.pathname
-  //     .toString()
-  //     .split('/')
-  //     .findIndex((id) => id === item.id);
-  //   if (currentIndex > -1) {
-  //     dispatch({ type: MENU_OPEN, id: item.id });
-  //   }
-  //   // eslint-disable-next-line
-  // }, [pathname]);
+  useEffect(() => {
+    const currentIndex = document.location.pathname
+      .toString()
+      .split('/')
+      .findIndex((id) => id === item.id);
+    if (currentIndex > -1) {
+      // dispatch({ type: MENU_OPEN, id: item.id });
+    }
+    // eslint-disable-next-line
+  }, [pathname]);
 
   return (
     <ListItemButton
-      // {...listItemProps}
+      {...listItemProps}
       disabled={item.disabled}
       sx={{
-        // borderRadius: `${customization.borderRadius}px`,
+        borderRadius: `12px`,
         mb: 0.5,
         alignItems: 'flex-start',
         backgroundColor: level > 1 ? 'transparent !important' : 'inherit',
@@ -81,9 +97,9 @@ const NavItem:React.FC<IHederProps> = ({ item, level }) => {
         pl: `${level * 24}px`
       }}
       selected={isOpen.findIndex((id:any) => id === item.id) > -1}
-      // onClick={() => itemHandler(item.id)}
+      onClick={() => itemHandler(item.id)}
     >
-      {/* <ListItemIcon sx={{ my: 'auto', minWidth: !item?.icon ? 18 : 36 }}>{itemIcon}</ListItemIcon> */}
+      <ListItemIcon sx={{ my: 'auto', minWidth: !item?.icon ? 18 : 36 }}>{itemIcon}</ListItemIcon>
       <ListItemText
         primary={
           <Typography 
