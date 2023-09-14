@@ -12,7 +12,7 @@ import themeTypography from './themes/typography';
 import customTheme from './themes/theme';
 
 const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })(({ theme , open }) => ({
-  // ...theme.typography?.mainContent,
+  ...theme.typography?.mainContent,
   borderBottomLeftRadius: 0,
   borderBottomRightRadius: 0,
   transition: theme.transitions.create(
@@ -81,7 +81,8 @@ export default function RootLayout({ children }: { children: React.ReactNode}) {
           <Sidebar drawerOpen={!matchDownMd ? leftDrawerOpened : !leftDrawerOpened} handleLeftDrawerToggle={handleLeftDrawerToggle}/>
 
           {/* main content */}
-          <Main theme={theme} open={leftDrawerOpened}>
+          {/* <Main theme={theme} open={leftDrawerOpened}> */}
+          <Main open={leftDrawerOpened}>
             {/* <Breadcrumbs separator={IconChevronRight} navigation={navigation} icon title rightAlign /> */}
             {/* <Outlet /> */}
             {children}

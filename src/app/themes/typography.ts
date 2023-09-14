@@ -108,8 +108,7 @@ export const themeTypography:any = (theme: any) => {
       }
     },
     mainContent: {
-      // backgroundColor: theme.background,
-      backgroundColor: 'red',
+      backgroundColor: theme.background,
       width: '100%',
       minHeight: 'calc(100vh - 88px)',
       flexGrow: 1,

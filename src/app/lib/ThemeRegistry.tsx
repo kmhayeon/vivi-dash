@@ -9,42 +9,11 @@ import { ThemeProvider as StyledThemeProvider } from 'styled-components';
 import CssBaseline from '@mui/material/CssBaseline';
 import customTheme from '../themes/theme';
 
-declare module '@mui/material/styles' {
-  interface Theme {
-    status: {
-      danger: string;
-    };
-  }
-  // allow configuration using `createTheme`
-  interface ThemeOptions {
-    status?: {
-      danger?: string;
-    };
-    mainContent?: any;
-  }
-}
+
 
 export default function ThemeRegistry(props: any) {
   const { options, children } = props;
   const muiTheme = useTheme();
-
-  const theme = createTheme({
-    status: {
-      danger: 'orange',
-    },
-    mainContent: {
-      // backgroundColor: theme.background,
-      backgroundColor: 'red',
-      width: '100%',
-      minHeight: 'calc(100vh - 88px)',
-      flexGrow: 1,
-      padding: '20px',
-      marginTop: '88px',
-      marginRight: '20px',
-      // borderRadius: `${theme.borderRadius}px`
-      borderRadius: '12px'
-    },
-  });
 
   const [{ cache, flush }] = React.useState(() => {
     const cache = createCache(options);
@@ -88,8 +57,7 @@ export default function ThemeRegistry(props: any) {
 
   return (
     <CacheProvider value={cache}>
-      {/* <MuiThemeProvider theme={muiTheme}> */}
-      <MuiThemeProvider theme={theme}>
+      <MuiThemeProvider theme={customTheme}>
       {/* <StyledThemeProvider theme={customTheme}> */}
         <CssBaseline />
         {children}
