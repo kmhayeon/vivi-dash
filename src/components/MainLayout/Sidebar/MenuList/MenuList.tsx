@@ -3,7 +3,7 @@ import { Typography } from '@mui/material';
 
 // project imports
 import NavGroup from '../NavGroup/NavGroup';
-import menuItems from '@/app/menu-items/menuItems';
+import menuItems from '@/menu-items/menuItems';
 
 
 const MenuList = () => {

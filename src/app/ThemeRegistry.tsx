@@ -7,7 +7,7 @@ import { CacheProvider } from '@emotion/react';
 import { ThemeProvider as MuiThemeProvider, createTheme, useTheme } from '@mui/material/styles';
 import { ThemeProvider as StyledThemeProvider } from 'styled-components';
 import CssBaseline from '@mui/material/CssBaseline';
-import customTheme from '../themes/theme';
+import customTheme from './themes/theme';
 
 
 export default function ThemeRegistry(props: any) {

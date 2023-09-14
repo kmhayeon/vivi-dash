@@ -1,12 +1,11 @@
 'use client'
-
 import React, { useState } from 'react';
-import ThemeRegistry from './lib/ThemeRegistry'
+import ThemeRegistry from './ThemeRegistry'
 import { styled, useTheme, Theme } from '@mui/material/styles';
 import { AppBar, Box, CssBaseline, Toolbar, useMediaQuery } from '@mui/material'
 
-import Header from './components/MainLayout/Header/Header';
-import Sidebar from './components/MainLayout/Sidebar/Sidebar';
+import Header from '../components/MainLayout/Header/Header';
+import Sidebar from '../components/MainLayout/Sidebar/Sidebar';
 
 import themeTypography from './themes/typography';
 import customTheme from './themes/theme';
