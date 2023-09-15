@@ -10,6 +10,9 @@ import { BrowserView, MobileView } from 'react-device-detect';
 import MenuList from './MenuList/MenuList';
 import LogoSection from '../../LogoSection/LogoSection';
 
+import Image from 'next/image';
+import LogoIMG from '@/asset/images/vivityai.png'
+
 
 interface IHederProps  {
   handleLeftDrawerToggle: () => void;
@@ -25,7 +28,14 @@ const Sidebar:React.FC<IHederProps> = ({ drawerOpen, handleLeftDrawerToggle, win
     <>
       <Box sx={{ display: { xs: 'block', md: 'none' } }}>
         <Box sx={{ display: 'flex', p: 2, mx: 'auto' }}>
-          <LogoSection />
+          {/* <LogoSection /> */}
+          <Image
+            src={LogoIMG}
+            width={110}
+            height={23}
+            alt="logo"
+            style={{marginTop:'10px'}}
+          />
         </Box>
       </Box>
       <BrowserView>

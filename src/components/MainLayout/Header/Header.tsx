@@ -12,6 +12,9 @@ import NotificationSection from './NotificationSection/NotificationSection';
 // assets
 import themeTypography from '@/app/themes/typography';
 
+import Image from 'next/image';
+import LogoIMG from '@/asset/images/vivityai.png'
+
 
 interface IHederProps  {
   handleLeftDrawerToggle: () => void;
@@ -35,7 +38,14 @@ const Header:React.FC<IHederProps> = props => {
         }}
       >
         <Box component="span" sx={{ display: { xs: 'none', md: 'block' }, flexGrow: 1 }}>
-          <LogoSection /> 
+          {/* <LogoSection />  */}
+          <Image
+            src={LogoIMG}
+            width={110}
+            height={23}
+            alt="logo"
+            style={{marginTop:'10px'}}
+          />
         </Box>
         <ButtonBase sx={{ borderRadius: '12px', overflow: 'hidden' }}>
           <Avatar
