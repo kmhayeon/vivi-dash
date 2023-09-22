@@ -9,7 +9,6 @@ import { ThemeProvider as StyledThemeProvider } from 'styled-components';
 import CssBaseline from '@mui/material/CssBaseline';
 import customTheme from './themes/theme';
 
-
 export default function ThemeRegistry(props: any) {
   const { options, children } = props;
   const muiTheme = useTheme();
@@ -57,11 +56,11 @@ export default function ThemeRegistry(props: any) {
 
   return (
     <CacheProvider value={cache}>
-      <MuiThemeProvider theme={customTheme}>
-      {/* <StyledThemeProvider theme={customTheme}> */}
+      <MuiThemeProvider theme={customTheme()}>
+        {/* <StyledThemeProvider theme={customTheme}> */}
         <CssBaseline />
         {children}
-      {/* </StyledThemeProvider> */}
+        {/* </StyledThemeProvider> */}
       </MuiThemeProvider>
     </CacheProvider>
   );

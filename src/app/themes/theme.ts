@@ -8,12 +8,10 @@ import componentStyleOverrides from './compStyleOverride';
 import themePalette from './palette';
 import themeTypography from './typography';
 
-
-
 export const customTheme = () => {
   const color = colors;
 
-  const themeOption:any = {
+  const themeOption: any = {
     colors: color,
     heading: color.grey900,
     paper: color.paper,
@@ -27,7 +25,7 @@ export const customTheme = () => {
     divider: color.grey200,
   };
 
-  const themeOptions:any = {
+  const themeOptions: any = {
     direction: 'ltr',
     palette: themePalette(themeOption),
     mixins: {
@@ -35,11 +33,11 @@ export const customTheme = () => {
         minHeight: '48px',
         padding: '16px',
         '@media (min-width: 600px)': {
-          minHeight: '48px'
-        }
-      }
+          minHeight: '48px',
+        },
+      },
     },
-    typography: themeTypography(themeOption)
+    typography: themeTypography(themeOption),
   };
 
   const themes = createTheme(themeOptions);
